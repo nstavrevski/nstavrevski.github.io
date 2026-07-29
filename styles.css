@@ -345,9 +345,12 @@ p {
 .menu-toggle {
 
   display: none;
+
   padding: 10px;
+
   margin: -10px;
-  line-height: 1; 
+
+  line-height: 1;
 
 }
 
@@ -882,16 +885,6 @@ footer {
 
   }
 
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .about-photo {
-    order: -1; /* photo above the text on mobile, optional but reads better */
-  }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1216,5 +1209,26 @@ button:focus-visible {
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.35);
+
+}
+
+/* ======================================
+   About Layout — Mobile
+   (Must stay below the unconditional
+   .about-layout rule above so it wins
+   the cascade at equal specificity.)
+====================================== */
+
+@media (max-width: 768px) {
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-photo {
+    order: -1;
+  }
 
 }
