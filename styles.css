@@ -345,6 +345,9 @@ p {
 .menu-toggle {
 
   display: none;
+  padding: 10px;
+  margin: -10px;
+  line-height: 1; 
 
 }
 
@@ -877,6 +880,16 @@ footer {
 
     text-align: center;
 
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-photo {
+    order: -1; /* photo above the text on mobile, optional but reads better */
   }
 
 }
