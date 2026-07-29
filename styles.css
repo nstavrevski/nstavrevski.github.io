@@ -1,0 +1,1207 @@
+/* ==========================================================
+   STAVREV.SKI
+   Design System
+   Version 1.0
+========================================================== */
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+
+  --bg: #09090B;
+  --surface: #111113;
+  --surface-hover: #17171A;
+
+  --text: #F5F5F7;
+  --muted: #A1A1AA;
+
+  --border: rgba(255,255,255,.08);
+
+  --primary: #4F8CFF;
+  --primary-hover: #6AA3FF;
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --container: 1200px;
+
+  --transition: .28s ease;
+
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  font-family: "Inter", sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  line-height: 1.75;
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+
+}
+
+img {
+
+  display: block;
+  max-width: 100%;
+
+}
+
+a {
+
+  color: inherit;
+  text-decoration: none;
+
+}
+
+button {
+
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+
+}
+
+ul {
+
+  list-style: none;
+
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+
+  background: var(--primary);
+  color: white;
+
+}
+
+/* ---------- Background ---------- */
+
+.background-gradient {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  background:
+      radial-gradient(circle at 15% 10%,
+          rgba(79,140,255,.12),
+          transparent 35%),
+
+      radial-gradient(circle at 85% 20%,
+          rgba(79,140,255,.08),
+          transparent 30%),
+
+      radial-gradient(circle at 50% 100%,
+          rgba(255,255,255,.03),
+          transparent 45%);
+
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+
+  width: min(var(--container), calc(100% - 48px));
+
+  margin-inline: auto;
+
+}
+
+.section {
+
+  padding: 110px 0;
+
+}
+
+/* ---------- Typography ---------- */
+
+h1 {
+
+  font-size: clamp(3.4rem, 7vw, 5.4rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -.05em;
+
+  max-width: 13ch;
+
+}
+
+h2 {
+
+  font-size: clamp(2rem,4vw,3rem);
+
+  line-height: 1.15;
+
+  letter-spacing: -.03em;
+
+}
+
+h3 {
+
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+}
+
+p {
+
+  color: var(--muted);
+
+  font-size: 1.08rem;
+
+}
+
+.section-heading {
+
+  margin-bottom: 64px;
+
+}
+
+.section-heading span {
+
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: .82rem;
+
+  font-weight: 700;
+
+  letter-spacing: .22em;
+
+  color: var(--primary);
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+
+}
+
+.logo span {
+
+  color: var(--primary);
+
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: .5rem;
+
+  padding: 15px 28px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+
+}
+
+.button.primary {
+
+  background: var(--primary);
+
+  color: white;
+
+}
+
+.button.primary:hover {
+
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+}
+
+.button.secondary {
+
+  border: 1px solid var(--border);
+
+  color: var(--text);
+
+  background: rgba(255,255,255,.02);
+
+}
+
+.button.secondary:hover {
+
+  background: rgba(255,255,255,.05);
+
+  border-color: rgba(255,255,255,.14);
+
+  transform: translateY(-2px);
+
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  backdrop-filter: blur(16px);
+
+  background: rgba(9,9,11,.70);
+
+  border-bottom: 1px solid transparent;
+
+  transition: var(--transition);
+
+}
+
+.navbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  min-height: 76px;
+
+}
+
+.nav-links {
+
+  display: flex;
+
+  gap: 36px;
+
+}
+
+.nav-links a {
+
+  color: var(--muted);
+
+  transition: var(--transition);
+
+  font-weight: 500;
+
+}
+
+.nav-links a:hover {
+
+  color: white;
+
+}
+
+.menu-toggle {
+
+  display: none;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+
+  padding-top: 110px;
+
+  padding-bottom: 110px;
+
+}
+
+.hero-grid {
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+}
+
+.eyebrow {
+
+  color: var(--primary);
+
+  text-transform: uppercase;
+
+  letter-spacing: .20em;
+
+  font-size: .85rem;
+
+  font-weight: 700;
+
+  margin-bottom: 26px;
+
+}
+
+.hero-text {
+
+  margin-top: 32px;
+
+  max-width: 720px;
+
+}
+
+.hero-actions {
+
+  display: flex;
+
+  gap: 16px;
+
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+
+}
+/* ==========================================================
+   COMPONENTS
+========================================================== */
+
+/* ---------- Current Role Card ---------- */
+
+.current-role {
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  padding: 36px;
+
+  backdrop-filter: blur(18px);
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+
+}
+
+.current-role:hover {
+
+  transform: translateY(-6px);
+
+  border-color: rgba(79,140,255,.28);
+
+}
+
+.section-tag {
+
+  display: inline-block;
+
+  font-size: .75rem;
+
+  font-weight: 700;
+
+  letter-spacing: .18em;
+
+  color: var(--primary);
+
+  margin-bottom: 18px;
+
+}
+
+.current-role h3 {
+
+  margin-bottom: 12px;
+
+}
+
+.current-role p {
+
+  margin-bottom: 10px;
+
+}
+
+.divider {
+
+  width: 100%;
+
+  height: 1px;
+
+  background: var(--border);
+
+  margin: 28px 0;
+
+}
+
+/* ---------- Two Column Layout ---------- */
+
+.two-column {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 64px;
+
+}
+
+.two-column p + p {
+
+  margin-top: 24px;
+
+}
+
+/* ---------- Card Grid ---------- */
+
+.card-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap: 28px;
+
+}
+
+.card {
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  padding: 36px;
+
+  transition: var(--transition);
+
+  backdrop-filter: blur(14px);
+
+}
+
+.card:hover {
+
+  transform: translateY(-6px);
+
+  background: var(--surface-hover);
+
+  border-color: rgba(79,140,255,.25);
+
+}
+
+.card h3 {
+
+  margin-bottom: 18px;
+
+}
+
+/* ---------- Experience ---------- */
+
+.experience-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 28px;
+
+}
+
+.experience-item {
+
+  background: rgba(255,255,255,.025);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  padding: 38px;
+
+  transition: var(--transition);
+
+}
+
+.experience-item:hover {
+
+  transform: translateX(8px);
+
+  border-color: rgba(79,140,255,.25);
+
+}
+
+.experience-item h3 {
+
+  color: var(--primary);
+
+  margin-bottom: 6px;
+
+}
+
+.experience-item h4 {
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  margin-bottom: 16px;
+
+}
+
+/* ---------- Expertise Chips ---------- */
+
+.tag-list {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+}
+
+.tag-list span {
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(255,255,255,.025);
+
+  color: var(--text);
+
+  font-size: .95rem;
+
+  transition: var(--transition);
+
+}
+
+.tag-list span:hover {
+
+  background: rgba(79,140,255,.10);
+
+  border-color: rgba(79,140,255,.30);
+
+  transform: translateY(-3px);
+
+}
+
+/* ---------- Hobbies ---------- */
+
+.hobbies {
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 24px;
+
+}
+
+.hobbies div {
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  padding: 36px 24px;
+
+  text-align: center;
+
+  transition: var(--transition);
+
+  font-size: 2rem;
+
+}
+
+.hobbies div:hover {
+
+  transform: translateY(-6px);
+
+  border-color: rgba(79,140,255,.25);
+
+}
+
+.hobbies span {
+
+  display: block;
+
+  margin-top: 18px;
+
+  font-size: 1rem;
+
+  color: var(--muted);
+
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+
+  padding: 140px 0;
+
+  text-align: center;
+
+}
+
+.contact h2 {
+
+  max-width: 10ch;
+
+  margin-inline: auto;
+
+  margin-bottom: 24px;
+
+}
+
+.contact p {
+
+  max-width: 680px;
+
+  margin: 0 auto;
+
+}
+
+.contact .hero-actions {
+
+  justify-content: center;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+
+  border-top: 1px solid var(--border);
+
+  padding: 36px 0;
+
+}
+
+.footer-content {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+
+}
+
+.footer-content strong {
+
+  font-size: 1.15rem;
+
+}
+
+.footer-content strong span {
+
+  color: var(--primary);
+
+}
+
+.footer-content div {
+
+  color: var(--muted);
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+.fade-in {
+
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+
+}
+
+.fade-in.visible {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+  .hero-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+  }
+
+  .two-column {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .card-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hobbies {
+
+    grid-template-columns: repeat(2,1fr);
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .section {
+
+    padding: 80px 0;
+
+  }
+
+  .hero {
+
+    padding-top: 72px;
+
+    padding-bottom: 72px;
+
+  }
+
+  .navbar {
+
+    min-height: 70px;
+
+  }
+
+  .menu-toggle {
+
+    display: block;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+  }
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .container {
+
+    width: min(100% - 32px, var(--container));
+
+  }
+
+  h1 {
+
+    font-size: clamp(2.7rem, 12vw, 4rem);
+
+  }
+
+  .hobbies {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .footer-content {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+
+/* ==========================================================
+   POLISH
+   Version 1.0
+========================================================== */
+
+/* ---------- Focus States ---------- */
+
+a:focus-visible,
+button:focus-visible {
+
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 8px;
+
+}
+
+/* ---------- Button Polish ---------- */
+
+.button.primary {
+
+  box-shadow:
+    0 10px 30px rgba(79,140,255,.20);
+
+}
+
+.button.primary:hover {
+
+  box-shadow:
+    0 18px 40px rgba(79,140,255,.28);
+
+}
+
+.button.secondary:hover {
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.25);
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+
+  transition: color .25s ease;
+
+}
+
+.logo:hover {
+
+  color: white;
+
+}
+
+/* ---------- Navigation Underline ---------- */
+
+.nav-links a {
+
+  position: relative;
+
+}
+
+.nav-links a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--primary);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform .25s ease;
+
+}
+
+.nav-links a:hover::after {
+
+  transform: scaleX(1);
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero h1 {
+
+  text-wrap: balance;
+
+}
+
+.hero-text {
+
+  text-wrap: pretty;
+
+}
+
+/* ---------- Cards ---------- */
+
+.card,
+.current-role,
+.experience-item,
+.hobbies div {
+
+  will-change: transform;
+
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+
+  position: relative;
+
+}
+
+.contact::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 700px;
+  height: 700px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(circle,
+      rgba(79,140,255,.06),
+      transparent 70%);
+
+  pointer-events: none;
+
+}
+
+/* ---------- Divider ---------- */
+
+.section:not(:last-of-type) {
+
+  position: relative;
+
+}
+
+.section:not(:last-of-type)::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: min(1200px, calc(100% - 48px));
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--border),
+      transparent
+    );
+
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  background: var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #2b2b2f;
+
+  border-radius: 999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #3d3d44;
+
+}
+
+/* ---------- Utilities ---------- */
+
+.hidden {
+
+  display: none !important;
+
+}
+
+.center {
+
+  text-align: center;
+
+}
+
+/* ======================================
+   Mobile Navigation
+====================================== */
+
+@media (max-width:768px) {
+
+  .nav-links {
+
+    position: absolute;
+
+    top: 76px;
+    left: 16px;
+    right: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    gap: 18px;
+
+    background: rgba(17,17,19,.96);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: var(--transition);
+
+  }
+
+  .nav-links.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+.about-layout {
+
+    display:grid;
+
+    grid-template-columns:2fr 320px;
+
+    gap:72px;
+
+    align-items:center;
+
+}
+
+.about-photo {
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about-photo img {
+
+    width:220px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
+
+}

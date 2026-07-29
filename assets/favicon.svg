@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512">
+
+  <!-- Background -->
+  <rect
+    x="0"
+    y="0"
+    width="512"
+    height="512"
+    rx="96"
+    fill="#111113"/>
+
+  <!-- .ski -->
+  <text
+    x="256"
+    y="272"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+    font-size="132"
+    font-weight="700"
+    letter-spacing="-2"
+    fill="#4F8CFF">.ski</text>
+
+</svg>
